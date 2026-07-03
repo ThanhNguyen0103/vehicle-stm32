@@ -7,6 +7,7 @@
 
 #include "app.h"
 #include "ignition.h"
+#include "dashboard.h"
 
 void App_Init(void) {
 	Ignition_Init();
@@ -14,5 +15,5 @@ void App_Init(void) {
 void App_Run(void) {
 
 	Ignition_Run();
-
+	Dashboard_Run();
 }
