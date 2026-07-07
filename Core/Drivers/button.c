@@ -7,12 +7,19 @@
 
 #include "button.h"
 
-bool Button_IsPressed(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) {
+Button_t Button_Init(Button_t *button, GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) {
+	button->GPIO_Pin = GPIO_Pin;
+	button->GPIOx = GPIOx;
+}
 
-	if (HAL_GPIO_ReadPin(GPIOx, GPIO_Pin) == GPIO_PIN_RESET) {
+bool Button_IsPressed(Button_t *button) {
+
+	if (HAL_GPIO_ReadPin(button->GPIOx, button->GPIO_Pin) == GPIO_PIN_RESET) {
 		HAL_Delay(30);
-		if (HAL_GPIO_ReadPin(GPIOx, GPIO_Pin) == GPIO_PIN_RESET) {
-			while (HAL_GPIO_ReadPin(GPIOx, GPIO_Pin) == GPIO_PIN_RESET)
+		if (HAL_GPIO_ReadPin(button->GPIOx, button->GPIO_Pin)
+				== GPIO_PIN_RESET) {
+			while (HAL_GPIO_ReadPin(button->GPIOx, button->GPIO_Pin)
+					== GPIO_PIN_RESET)
 				;
 
 			return true;
