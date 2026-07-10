@@ -21,9 +21,9 @@ bool Button_IsPressed(Button_t *button) {
 			while (HAL_GPIO_ReadPin(button->GPIOx, button->GPIO_Pin)
 					== GPIO_PIN_RESET)
 				;
-
 			return true;
 		}
 	}
 	return false;
 }
+

@@ -11,9 +11,9 @@
 
 void App_Init(void) {
 	Ignition_Init();
+	ssd1306_Init();
 }
 void App_Run(void) {
-
 	Ignition_Run();
 	Dashboard_Run();
 }
