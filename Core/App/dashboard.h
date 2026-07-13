@@ -9,5 +9,5 @@
 #define APP_DASHBOARD_H_
 
 void Dashboard_Run(void);
-
+void Dashboard_Init(void);
 #endif /* APP_DASHBOARD_H_ */

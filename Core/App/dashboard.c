@@ -14,6 +14,10 @@
 static IgnitionState_t preIgnition = IGNITION_OFF;
 static Driving_Mode_t preMode = ECO_MODE;
 
+void Dashboard_Init(void) {
+	ssd1306_Init();
+}
+
 void Dashboard_Run(void) {
 
 	IgnitionState_t ignition = Ignition_GetState();

@@ -8,12 +8,16 @@
 #include "app.h"
 #include "ignition.h"
 #include "dashboard.h"
+#include"drivingmode.h"
 
 void App_Init(void) {
+	Dashboard_Init();
 	Ignition_Init();
-	ssd1306_Init();
+	DrivingMode_Init();
 }
 void App_Run(void) {
-	Ignition_Run();
 	Dashboard_Run();
+	Ignition_Run();
+	DrivingMode_Run();
+
 }
