@@ -9,7 +9,7 @@
 #define APP_DRIVINGMODE_H_
 
 typedef enum {
-	ECO_MODE, SPORT_MODE
+	ECO_MODE, SPORT_MODE,
 
 } Driving_Mode_t;
 
