@@ -15,6 +15,7 @@ void ADC_Init(void) {
 uint32_t ADC_ReadValue(void) {
 	if (HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY) == HAL_OK) {
 		return HAL_ADC_GetValue(&hadc1);
+
 	}
 }
 

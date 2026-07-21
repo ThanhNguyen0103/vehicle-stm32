@@ -7,7 +7,7 @@
 
 #include "button.h"
 
-Button_t Button_Init(Button_t *button, GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) {
+void Button_Init(Button_t *button, GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) {
 	button->GPIO_Pin = GPIO_Pin;
 	button->GPIOx = GPIOx;
 }

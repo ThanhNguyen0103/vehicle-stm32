@@ -9,6 +9,7 @@
 #include "ignition.h"
 #include "dashboard.h"
 #include"drivingmode.h"
+#include "vehiclespeed.h"
 
 void App_Init(void) {
 	Dashboard_Init();
