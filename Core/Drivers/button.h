@@ -15,9 +15,21 @@ typedef struct {
 	GPIO_TypeDef *GPIOx;
 	uint16_t GPIO_Pin;
 
+	GPIO_PinState lastState;
+	uint32_t lastTick;
+
+	bool pressed;
+	bool released;
+	bool holding;
+
 } Button_t;
 
-bool Button_IsPressed(Button_t *button);
 void Button_Init(Button_t *button, GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin);
+
+void Button_Update(Button_t *button);
+
+bool Button_IsReleased(Button_t *button);
+bool Button_IsPressed(Button_t *button);
+bool Button_IsHolding(Button_t *button);
 
 #endif /* DRIVERS_BUTTON_H_ */

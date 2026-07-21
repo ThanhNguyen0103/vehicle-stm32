@@ -25,7 +25,7 @@ void DrivingMode_Init(void) {
 }
 
 void DrivingMode_Run(void) {
-
+	Button_Update(&driving_button_mode);
 	if (Ignition_GetState() == IGNITION_OFF) {
 		return;
 	}

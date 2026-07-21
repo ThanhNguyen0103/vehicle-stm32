@@ -33,16 +33,21 @@ uint32_t VehicleSpeed_Run(void) {
 	const uint32_t adc_value = ADC_ReadValue();
 
 	const uint32_t targetSpeed = (adc_value * maxSpeed) / 4095;
-	if (Brake_getState() == BRAKE_ON) {
-		if (currentSpeed > 0)
-			currentSpeed--;
-	} else {
-		if (currentSpeed < targetSpeed) {
-			currentSpeed++;
-		} else if (currentSpeed > targetSpeed) {
-			currentSpeed--;
-		}
+	if (currentSpeed < targetSpeed) {
+		currentSpeed++;
+	} else if (currentSpeed > targetSpeed) {
+		currentSpeed--;
 	}
+//	if (Brake_GetState() == BRAKE_ON) {
+//		if (currentSpeed > 0)
+//			currentSpeed--;
+//	} else {
+//		if (currentSpeed < targetSpeed) {
+//			currentSpeed++;
+//		} else if (currentSpeed > targetSpeed) {
+//			currentSpeed--;
+//		}
+//	}
 
 //	CAN_Frame_t frame;
 //	frame.id = CAN_ID_VEHICLE_SPEED;

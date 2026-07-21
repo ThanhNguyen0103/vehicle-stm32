@@ -16,6 +16,7 @@ void Brake_Init(void) {
 	Button_Init(&brakeButton, GPIOA, GPIO_PIN_12);
 }
 void Brake_Run(void) {
+	Button_Update(&brakeButton);
 	if (Button_IsPressed(&brakeButton)) {
 		brakeState = (brakeState == BRAKE_OFF) ? BRAKE_ON : BRAKE_OFF;
 	}
