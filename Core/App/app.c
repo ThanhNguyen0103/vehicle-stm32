@@ -17,14 +17,14 @@ void App_Init(void) {
 	Ignition_Init();
 	DrivingMode_Init();
 	VehicleSpeed_Init();
-//	Brake_Init();
+	Brake_Init();
 }
 void App_Run(void) {
 
-	Dashboard_Run();
 	Ignition_Run();
 	DrivingMode_Run();
 	VehicleSpeed_Run();
-//	Brake_Run();
+	Brake_Run();
+	Dashboard_Run();
 
 }

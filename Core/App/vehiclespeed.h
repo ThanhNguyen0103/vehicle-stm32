@@ -9,6 +9,6 @@
 #define APP_VEHICLESPEED_H_
 #include "stdint.h"
 void VehicleSpeed_Init(void);
-uint32_t VehicleSpeed_Run(void);
+void VehicleSpeed_Run(void);
 uint32_t VehicleSpeed_GetSpeed(void);
 #endif /* APP_VEHICLESPEED_H_ */

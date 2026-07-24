@@ -13,13 +13,14 @@ static Brake_State_t brakeState;
 
 void Brake_Init(void) {
 	brakeState = BRAKE_OFF;
-	Button_Init(&brakeButton, GPIOA, GPIO_PIN_12);
+	Button_Init(&brakeButton, GPIOB, GPIO_PIN_15);
 }
 void Brake_Run(void) {
 	Button_Update(&brakeButton);
-	if (Button_IsPressed(&brakeButton)) {
-		brakeState = (brakeState == BRAKE_OFF) ? BRAKE_ON : BRAKE_OFF;
-	}
+	if (Button_IsHolding(&brakeButton)) {
+		brakeState = BRAKE_ON;
+	} else
+		brakeState = BRAKE_OFF;
 }
 
 Brake_State_t Brake_GetState(void) {

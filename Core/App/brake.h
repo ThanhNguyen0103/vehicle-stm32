@@ -9,7 +9,7 @@
 #define APP_BRAKE_H_
 
 typedef enum {
-	BRAKE_ON, BRAKE_OFF
+	BRAKE_OFF, BRAKE_ON
 } Brake_State_t;
 
 void Brake_Init(void);
